@@ -14,7 +14,7 @@ struct AppModeView: View {
         Group {
             switch vieModel.appMode {
             case .gameSetup:
-                Text("Game Setup")
+               GameSetupView()
             case .game:
                 Text("Game")
                 
