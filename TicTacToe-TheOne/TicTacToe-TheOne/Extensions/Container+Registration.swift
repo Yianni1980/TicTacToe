@@ -13,15 +13,18 @@ extension Container {
     }
     
     var gameSetupStore: Factory<GameSetupLiveStore> {
-       self { MainActor.assumeIsolated { GameSetupLiveStore() } }.singleton
-     }
+        self { MainActor.assumeIsolated { GameSetupLiveStore() } }.singleton
+    }
+    
+    var botEngineService: Factory<BotEngineServiceProtocol> {
+        self { MainActor.assumeIsolated { BotEngineService() } }.singleton
+    }
     
     var errorHandlerService: Factory<ErrorHandlerProtocol> {
         self { MainActor.assumeIsolated { ErrorHandlerService() } }.singleton
-      }
-      
-      var analyticsService: Factory<AnalyticsProtocol> {
+    }
+    
+    var analyticsService: Factory<AnalyticsProtocol> {
         self { MainActor.assumeIsolated { AnalyticsService() } }.singleton
-      }
-     
+    }
 }
